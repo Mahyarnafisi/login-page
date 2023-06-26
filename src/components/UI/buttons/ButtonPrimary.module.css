@@ -1,0 +1,18 @@
+.btn-primary {
+  padding: 1.5rem 5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999rem;
+  background-color: var(--color-primary-2);
+  color: white;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  color: var(--color-primary-1);
+  border: 2px solid var(--color-primary-1);
+}
