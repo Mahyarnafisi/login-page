@@ -3,6 +3,7 @@ import styles from "./Login.module.css";
 import LoginImage from "../../assets/7074555_3540174.webp";
 import { BsChevronRight } from "react-icons/bs";
 import { BiLogoCodepen } from "react-icons/bi";
+import { motion } from "framer-motion";
 function Login(props) {
   const [emailValidation, setEmailValidation] = useState(true);
   const [passwordValidation, setPasswordValidation] = useState(true);
@@ -28,7 +29,7 @@ function Login(props) {
 
   return (
     <div className={styles["login"]}>
-      <div className={styles.img}>
+      <motion.div className={styles.img} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
         <div className={styles.text}>
           <BiLogoCodepen className={styles.logo} />
           <h3>
@@ -37,7 +38,7 @@ function Login(props) {
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae incidunt distinctio veritatis iste consequuntur id blanditiis minus nam ullam repellendus?</p>
         </div>
         <img src={LoginImage} alt="login image" />
-      </div>
+      </motion.div>
       <form className={styles.form} action="submit" onSubmit={formSubmitHandler}>
         <h3 className={styles.title}>User Login:</h3>
         <label className={styles.label} htmlFor="email">

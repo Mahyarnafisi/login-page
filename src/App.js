@@ -1,21 +1,27 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import Login from "./components/login/Login";
 import Home from "./components/home/Home";
-// import { motion } from "framer-motion";
-
-import ButtonPrimary from "./components/UI/buttons/ButtonPrimary";
-import ButtonSecondary from "./components/UI/buttons/ButtonSecondary";
+import { motion } from "framer-motion";
 
 function App(props) {
   const [online, setOnline] = useState(false);
 
+  useEffect(() => {
+    const loginInfo = localStorage.getItem("logged in");
+    if (loginInfo === "1") {
+      setOnline(true);
+    }
+  }, []);
+
   const onlineStatusChanger = () => {
-    setOnline(!online);
+    setOnline(true);
+    localStorage.setItem("logged in", "1");
   };
   console.log(online);
   const offlineStatusChanger = () => {
-    setOnline(!online);
+    setOnline(false);
+    localStorage.setItem("logged in", "0");
   };
   return (
     <div className="app">

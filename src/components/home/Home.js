@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Home.module.css";
 import Navbar from "../navbar/Navbar";
 import { BiLogoCodepen } from "react-icons/bi";
+import { motion } from "framer-motion";
 function Home(props) {
   const logoutHandler = () => {
     props.setOffline();
