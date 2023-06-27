@@ -1,2 +1,117 @@
 .login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  box-shadow: 0 2rem 7rem #00000035;
+  width: 120rem;
+  height: 60rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.form {
+  padding: 4rem;
+  display: grid;
+  grid-gap: 2rem;
+  justify-content: stretch;
+  align-content: center;
+}
+
+.title {
+  font-size: 3.6rem;
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+
+.label {
+  font-size: 1.6rem;
+}
+
+.input {
+  padding: 1rem;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid;
+  font-size: 1.8rem;
+}
+
+.input::placeholder {
+  opacity: 40%;
+}
+
+.img {
+  display: flex;
+  position: relative;
+}
+
+.img img {
+  object-fit: cover;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text {
+  position: absolute;
+  color: white;
+  width: 85%;
+  height: min-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-left: 1px solid white;
+  padding: 0.5rem 3rem;
+}
+
+.logo {
+  font-size: 13em;
+  right: 5%;
+  position: absolute;
+  top: -30%;
+}
+.text span {
+  font-weight: 600;
+  font-size: 5.6rem;
+}
+
+.text h3 {
+  font-size: 3.2rem;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-weight: 100;
+  margin-bottom: 2rem;
+}
+
+.text p {
+  font-size: 1.8rem;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+.btn-submit {
+  padding: 1.5rem 5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 999rem;
+  background-color: var(--color-primary-2);
+  color: white;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  color: var(--color-primary-1);
+  border: 2px solid var(--color-primary-1);
 }
