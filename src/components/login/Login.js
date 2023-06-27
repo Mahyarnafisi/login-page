@@ -67,7 +67,7 @@ function Login(props) {
         </label>
         <input id="password" className={!passwordValidation ? styles.inputInvalid : styles.input} type="password" placeholder="Password" onChange={passwordChangeHandler} value={password} onBlur={onValidationPassword} />
 
-        <button className={`${styles["btn-submit"]} ${!validForm ? styles.btnDisable : ""}`}>
+        <button className={`${styles["btn-submit"]} ${!validForm ? styles.btnDisable : ""}`} disabled={!validForm ? true : false}>
           Login <BsChevronRight />
         </button>
       </form>
