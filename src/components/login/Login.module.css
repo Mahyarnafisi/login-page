@@ -128,3 +128,14 @@
 .inputInvalid::placeholder {
   color: #fd4f0a;
 }
+
+.btnDisable {
+  background-color: lightgray;
+  color: white;
+  cursor: default;
+}
+.btnDisable:hover {
+  background-color: lightgray;
+  color: white;
+  border: 2px solid transparent;
+}

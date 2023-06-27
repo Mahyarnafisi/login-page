@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import { BiLogoCodepen } from "react-icons/bi";
 import { BsChevronRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 function Navbar(props) {
   const logoutHandler = () => {
     props.setOffline();
@@ -21,9 +22,9 @@ function Navbar(props) {
           <li className={styles.item}>
             <a className={styles.link} href="#"></a>Contact
           </li>
-          <li className={styles.item} onClick={logoutHandler}>
+          <motion.li className={styles.item} onClick={logoutHandler} initial={{ x: 250 }} animate={{ x: 0 }} transition={{ ease: "backIn", duration: 1 }}>
             <a className={styles.link} href="#"></a>Logout <BsChevronRight />
-          </li>
+          </motion.li>
         </ul>
       </div>
     </div>

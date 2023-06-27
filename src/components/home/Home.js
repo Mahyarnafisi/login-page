@@ -8,11 +8,13 @@ function Home(props) {
     props.setOffline();
   };
   return (
-    <div className={styles["home"]}>
+    <motion.div className={styles["home"]} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ ease: "easeInOut" }}>
       <Navbar setOffline={logoutHandler} />
       <BiLogoCodepen className={styles.logo} />
-      <h1 className={styles["welcome"]}>Welcome to your Dashboard</h1>
-    </div>
+      <motion.h1 className={styles["welcome"]} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
+        Welcome to your Dashboard
+      </motion.h1>
+    </motion.div>
   );
 }
 export default Home;
