@@ -25,7 +25,11 @@ function App(props) {
     localStorage.setItem("logged in", "0");
   };
   return (
-    <authContext.Provider value={{ online: online }}>
+    <authContext.Provider
+      value={{
+        online: online,
+      }}
+    >
       <div className="app">
         {online && <Home setOffline={offlineStatusChanger} />}
         {!online && <Login setOnline={onlineStatusChanger} />}

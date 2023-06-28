@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import authContext from "../state/AuthContext";
+
 import styles from "./Home.module.css";
 import Navbar from "../navbar/Navbar";
 import { BiLogoCodepen } from "react-icons/bi";
 import { motion } from "framer-motion";
 function Home(props) {
-  const ctx = useContext(authContext);
-
   const logoutHandler = () => {
     props.setOffline();
   };
