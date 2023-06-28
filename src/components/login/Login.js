@@ -11,10 +11,17 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [validForm, setValidForm] = useState(false);
-  console.log(validForm);
 
   useEffect(() => {
-    setValidForm(email.trim().includes("@") && password.trim().length > 3);
+    const finalizer = setTimeout(() => {
+      setValidForm(email.trim().includes("@") && password.trim().length > 3);
+      console.log("1");
+    }, 500);
+
+    return () => {
+      console.log("2");
+      setTimeout(finalizer);
+    };
   }, [email, password]);
 
   /** update email state*/
@@ -25,11 +32,11 @@ function Login(props) {
   const passwordChangeHandler = (e) => {
     setPassword(e.target.value);
   };
-
+  /**validation on email input */
   const onValidationEmail = () => {
     setEmailValidation(email.includes("@"));
   };
-
+  /**validation on password input */
   const onValidationPassword = () => {
     setPasswordValidation(password.trim().length > 3);
   };
@@ -50,7 +57,7 @@ function Login(props) {
           <h3>
             Welcome to <br /> <span>SuperLogin</span>
           </h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae incidunt distinctio veritatis iste consequuntur id blanditiis minus nam ullam repellendus?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae incidunt distinctio veritatis repellendus?</p>
         </div>
         <img src={LoginImage} alt="loginimage" />
       </motion.div>
