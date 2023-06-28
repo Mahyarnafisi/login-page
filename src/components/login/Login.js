@@ -6,6 +6,9 @@ import { BiLogoCodepen } from "react-icons/bi";
 import { motion } from "framer-motion";
 
 function Login(props) {
+  /**
+   * states
+   */
   const [emailValidation, setEmailValidation] = useState(true);
   const [passwordValidation, setPasswordValidation] = useState(true);
   const [email, setEmail] = useState("");

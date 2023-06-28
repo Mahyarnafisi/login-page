@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import "./App.css";
+import authContext from "./components/state/AuthContext";
 import Login from "./components/login/Login";
 import Home from "./components/home/Home";
 import { motion } from "framer-motion";
@@ -24,10 +25,12 @@ function App(props) {
     localStorage.setItem("logged in", "0");
   };
   return (
-    <div className="app">
-      {online && <Home setOffline={offlineStatusChanger} />}
-      {!online && <Login setOnline={onlineStatusChanger} />}
-    </div>
+    <authContext.Provider value={{ online: online }}>
+      <div className="app">
+        {online && <Home setOffline={offlineStatusChanger} />}
+        {!online && <Login setOnline={onlineStatusChanger} />}
+      </div>
+    </authContext.Provider>
   );
 }
 
